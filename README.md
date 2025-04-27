@@ -1,5 +1,7 @@
 # TaxoLLaMA
 
+**This is a slight modification of the original [repo](https://github.com/VityaVitalich/TaxoLLaMA) by [VityaVitalich](https://github.com/VityaVitalich). All bolded text, except for the headings, represents additions to the original README.**
+
 We present a unified model that is capable of solving taxonomy related tasks, described in our paper [TaxoLLaMA: WordNet-based Model for Solving Multiple Lexical Sematic Tasks](https://arxiv.org/abs/2403.09207) accepted to Main ACL 2024. Here you could find the instructions to reproduce all our results.
 
 ### Model
@@ -16,10 +18,15 @@ Each train or test set presented with ```.pickle``` format, for the ease of pyth
 - children: string representing hyponym
 - child_def: string representing definition for the hyponym
 
-The data is availible by this link to [Drive](https://drive.google.com/drive/folders/1nBCW9KlA77SDggn7MqZ3S4NOn4mAD36W?usp=sharing)
+~The data is availible by this link to [Drive](https://drive.google.com/drive/folders/1nBCW9KlA77SDggn7MqZ3S4NOn4mAD36W?usp=sharing)~
+
+**Pickled datasets from the Drive are stored in the `datasets` folder.**
+
 #### Pre-training with WordNet
 
 For pre-training with instructive WordNet dataset we should simply sample data in our format. The process of sampling and recreation of data is possible in ```DataConsructor/unified_model.ipynb``` notebook. As well we also publish created datasets and can be downloaded from Drive named ```tax_instruct_wnet.tar.gz```.
+
+**We propose a more refined procedure for constructing training samples, aimed at facilitating the investigation of the impact of different types of items (specifically, co-hyponyms and non-cohyponyms) on the performance of the model. This procedure can be followed by running the `DataConstructor/sample_constructor.ipynb` notebook, and the resulting samples are stored in the `samples` folder.**
 
 #### Hypernym Discovery
 
